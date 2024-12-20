@@ -8,3 +8,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 
 - strict mode;
 - Desestruturação;
+- rest e spread;
