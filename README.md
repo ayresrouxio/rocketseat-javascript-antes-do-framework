@@ -7,3 +7,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 ## Tópicos:
 
 - strict mode;
+- Desestruturação;
