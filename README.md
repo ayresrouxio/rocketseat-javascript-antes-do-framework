@@ -11,3 +11,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - rest e spread;
 - Método map();
 - Método filter();
+- Método findIndex();
