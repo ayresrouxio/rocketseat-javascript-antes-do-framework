@@ -1,12 +1,24 @@
-// Rest params (...) permite representar um número indefinido de argumentos como um array.
+// spread (espalhar) permite que um objeto iterável, como uma expressão de array ou uma string seja expandido para ser usado onde zero ou mais argumentos.
 
-function values(a, ...rest) {
-  console.log(a)
+const numbers = [1, 2, 3]
+console.log(numbers)
 
-  // Exibe o conteúdo do array.
-  console.log(rest)
+// Spread
+console.log(...numbers)
 
-  console.log(...rest)
-}
+// Criando objeto
+const data = [
+  {
+    name: "Rodrigo",
+    email: "rodrigo@email.com",
+    avatar: "r.png",
+  },
+  {
+    name: "João",
+    email: "joao@email.com",
+    avatar: "j.png",
+  },
+]
 
-values(2, 1, 3, 4)
+// Utilizando o spread no array com objetos.
+console.log(...data)
