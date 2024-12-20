@@ -1,8 +1,7 @@
-// O método every() testa se todos os elementos do array passam na condição e retorna um valor Boolean.
+// O método some() testa se ao menos um dos elementos no array passa na condição e retorna um valor true ou false.
 
 // Exemplo de array de idades.
-const ages = [18, 30, 39, 29]
+const ages = [15, 30, 39, 29]
 
-// Verificando se todas as idades são maiores ou igual a 18.
-const result = ages.every((age) => age >= 18)
+const result = ages.some((age) => age < 18)
 console.log(result)
