@@ -1,26 +1,8 @@
-// O método find() retorna o valor do primeiro elemento do array que satisfazer a condição. Caso contrário, undefined é retornado.
+// O método every() testa se todos os elementos do array passam na condição e retorna um valor Boolean.
 
-const values = [5, 12, 8, 130, 44]
+// Exemplo de array de idades.
+const ages = [18, 30, 39, 29]
 
-// Retorna o primeiro elemento que o valor é maior que 10.
-const found = values.find((value) => value > 10)
-console.log(found)
-
-// Exemplo com objetos.
-const fruits = [
-  {
-    name: "apple",
-    quantity: 23,
-  },
-  {
-    name: "bananas",
-    quantity: 25,
-  },
-  {
-    name: "oranges",
-    quantity: 52,
-  },
-]
-
-const result = fruits.find((fruit) => fruit.name === "bananas")
+// Verificando se todas as idades são maiores ou igual a 18.
+const result = ages.every((age) => age >= 18)
 console.log(result)
