@@ -1,22 +1,12 @@
-// destructuring assignment (desestruturação) permite extrair dados de arrays ou objetos em variáveis distintas.
+// Rest params (...) permite representar um número indefinido de argumentos como um array.
 
-const product = {
-  description: "Teclados",
-  price: 150,
+function values(a, ...rest) {
+  console.log(a)
+
+  // Exibe o conteúdo do array.
+  console.log(rest)
+
+  console.log(...rest)
 }
 
-const { description, price } = product
-
-console.log(description)
-console.log(price)
-
-function newProduct({ description, price }) {
-  console.log("Novo Produto:")
-  console.log(description)
-  console.log(price)
-}
-
-newProduct({
-  description: "Mouse",
-  price: 70,
-})
+values(2, 1, 3, 4)
