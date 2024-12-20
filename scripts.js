@@ -1,21 +1,28 @@
-// O método map() chama a função callback recebida por parâmetro para cada elemento do Array original, em ordem, e constrói um novo array com base nos retornos de cda chamada. E no final, devolve um novo array.
+// O método filter() cria um novo array com todos os elementos que passaram na condição.
 
-const products = ["Teclado", "Mouse", "Monitor"]
+const words = ["Javascript", "HTML", "CSS", "Web"]
 
-// Percorrendo os itens do Array.
-products.map((product) => {
-  console.log(product)
-})
+const result = words.filter((word) => word.length > 3)
+console.log(result)
 
-// Sintaxe reduzida.
-products.map((product) => console.log(product))
+const products = [
+  {
+    description: "Teclado",
+    price: 150,
+    promotion: true,
+  },
+  {
+    description: "Mouse",
+    price: 70,
+    promotion: false,
+  },
+  {
+    description: "Monitor",
+    price: 900,
+    promotion: true,
+  },
+]
 
-// Utilizando o novo objeto retornado.
-const formatted = products.map((product) => {
-  return {
-    id: Math.random(),
-    description: product,
-  }
-})
-
-console.log(formatted)
+// Exemplo de um filtro de produtos na promoção
+const promotion = products.filter((product) => product.promotion === true)
+console.log(promotion)
