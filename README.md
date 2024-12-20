@@ -14,3 +14,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Método findIndex();
 - Método find();
 - Método every();
+- Método some();
