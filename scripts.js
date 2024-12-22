@@ -1,18 +1,27 @@
-/*
-  O método reduce() é utilizado para reduzir um array a um único valor.
+const address1 = {
+  street: "Av. Brasil",
+  number: 20,
+}
 
-  Parâmetros:
-  - Array original (values)
-  - Acumulador (accumulator)
-  - Valor da iteração (currentValue)
-  - Valor inicial (0)
-  - Index (index da iteração atual - opcional)
-*/
+// Isso não é uma cópia. É uma referência.
+// const address2 = address1
+// address2.number = 30
 
-const values = [1, 2, 3, 4, 5]
+// Aqui estamos criando um novo objeto utilizando as propriedades e valores de address1 (opção 1).
+// const address2 = { ...address1 }
+// address2.number = 30
 
-const sum = values.reduce((accumulator, currentValue, index) => {
-  return accumulator + currentValue
-}, 0)
+const address2 = { ...address1, number: 30 }
+console.log(address1, address2)
 
-console.log(sum)
+const list1 = ["Apple", "Banana"]
+
+// Exemplo de referência Array.
+// const list2 = list1
+// list2.push("Watermelon")
+
+const list2 = [...list1]
+
+list2.push("Watermelon")
+
+console.log(list1, list2)
