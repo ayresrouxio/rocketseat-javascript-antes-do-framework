@@ -9,10 +9,11 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - strict mode;
 - Desestruturação;
 - rest e spread;
-- Método map();
-- Método filter();
-- Método findIndex();
-- Método find();
-- Método every();
-- Método some();
-- Método reduce();
+- Método `map()`;
+- Método `filter()`;
+- Método `findIndex()`;
+- Método `find()`;
+- Método `every()`;
+- Método `some()`;
+- Método `reduce()`;
+- Conceitos de imutabilidade;
