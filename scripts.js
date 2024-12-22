@@ -7,30 +7,17 @@ const book = {
   },
 }
 
-console.log(book)
-
-function deepFreeze(object) {
-  // Obtém um array com todas as propriedades do objeto.
-  const props = Reflect.ownKeys(object)
-
-  // Itera sobre todas as propriedades do objeto.
-  for (const prop of props) {
-    // Obtém o valor associado à propriedade atual.
-    const value = object[prop]
-
-    // Verifica se o valor é um objeto ou função para continuar aplicando o deepFreeze em objetos aninhados.
-    if ((value && typeof value === "object") || typeof value === "function") {
-      deepFreeze(value)
-    }
-  }
-
-  // Retorna o objeto congelado.
-  return Object.freeze(object)
+const updatedBook = {
+  ...book,
+  title: "Criando um Front-end Moderno com HTML",
+  category: "html",
+  type: "Programming",
 }
 
-deepFreeze(book)
-
-book.category = "HTML"
-book.author.name = "João"
-
 console.log(book)
+
+console.log(updatedBook)
+
+// Utilizando operador de desestruturação (rest operator) para remover propriedades.
+const { author, ...bookWithoutCategory } = book
+console.log(bookWithoutCategory)
