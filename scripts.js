@@ -1,39 +1,20 @@
-// Shallow Copy (cópia superficial): não pega os itens aninhados.
-
-const htmlCourse = {
-  course: "HTML",
-  students: [{ name: "Rodrigo", email: "rodrigo@email.com" }],
+const book = {
+  title: "Objetos Imutáveis",
+  category: "javascript",
+  author: {
+    name: "Rodrigo",
+    email: "rodrigo@email.com",
+  },
 }
 
-/*
-const jsCourse = {
-  ...htmlCourse,
-  course: "Javascript",
-}
-*/
+// O javascript em sí não impõem restrições à modificação dos objetos.
+// book.category = "HTML"
 
-// Vai modificar o htmlCourse também porque students é uma referência e não uma cópia.
-// jsCourse.students.push({ name: "João", email: "joao@email.com" })
+// Congela o objeto e impede a modificação.
+Object.freeze(book)
+book.category = "CSS" // Não modifica.
 
-// Deep Copy (cópia profunda)
-/*
-const jsCourse = {
-  ...htmlCourse,
-  course: "Javascript",
-  students: [...htmlCourse.students],
-}
+// O object.freeze não impede modificações profundas em objetos aninhados (shallow freezing).
+book.author.name = "João"
 
-jsCourse.students.push({ name: "João", email: "joao@email.com" })
-*/
-
-const jsCourse = {
-  ...htmlCourse,
-  course: "Javascript",
-}
-
-jsCourse.students = [
-  ...htmlCourse.students,
-  { name: "João", email: "joao@email.com" },
-]
-
-console.log(htmlCourse, jsCourse)
+console.log(book)
