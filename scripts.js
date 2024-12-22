@@ -1,27 +1,39 @@
-const address1 = {
-  street: "Av. Brasil",
-  number: 20,
+// Shallow Copy (cópia superficial): não pega os itens aninhados.
+
+const htmlCourse = {
+  course: "HTML",
+  students: [{ name: "Rodrigo", email: "rodrigo@email.com" }],
 }
 
-// Isso não é uma cópia. É uma referência.
-// const address2 = address1
-// address2.number = 30
+/*
+const jsCourse = {
+  ...htmlCourse,
+  course: "Javascript",
+}
+*/
 
-// Aqui estamos criando um novo objeto utilizando as propriedades e valores de address1 (opção 1).
-// const address2 = { ...address1 }
-// address2.number = 30
+// Vai modificar o htmlCourse também porque students é uma referência e não uma cópia.
+// jsCourse.students.push({ name: "João", email: "joao@email.com" })
 
-const address2 = { ...address1, number: 30 }
-console.log(address1, address2)
+// Deep Copy (cópia profunda)
+/*
+const jsCourse = {
+  ...htmlCourse,
+  course: "Javascript",
+  students: [...htmlCourse.students],
+}
 
-const list1 = ["Apple", "Banana"]
+jsCourse.students.push({ name: "João", email: "joao@email.com" })
+*/
 
-// Exemplo de referência Array.
-// const list2 = list1
-// list2.push("Watermelon")
+const jsCourse = {
+  ...htmlCourse,
+  course: "Javascript",
+}
 
-const list2 = [...list1]
+jsCourse.students = [
+  ...htmlCourse.students,
+  { name: "João", email: "joao@email.com" },
+]
 
-list2.push("Watermelon")
-
-console.log(list1, list2)
+console.log(htmlCourse, jsCourse)
