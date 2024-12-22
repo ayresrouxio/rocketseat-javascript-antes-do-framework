@@ -7,14 +7,30 @@ const book = {
   },
 }
 
-// O javascript em sí não impõem restrições à modificação dos objetos.
-// book.category = "HTML"
+console.log(book)
 
-// Congela o objeto e impede a modificação.
-Object.freeze(book)
-book.category = "CSS" // Não modifica.
+function deepFreeze(object) {
+  // Obtém um array com todas as propriedades do objeto.
+  const props = Reflect.ownKeys(object)
 
-// O object.freeze não impede modificações profundas em objetos aninhados (shallow freezing).
+  // Itera sobre todas as propriedades do objeto.
+  for (const prop of props) {
+    // Obtém o valor associado à propriedade atual.
+    const value = object[prop]
+
+    // Verifica se o valor é um objeto ou função para continuar aplicando o deepFreeze em objetos aninhados.
+    if ((value && typeof value === "object") || typeof value === "function") {
+      deepFreeze(value)
+    }
+  }
+
+  // Retorna o objeto congelado.
+  return Object.freeze(object)
+}
+
+deepFreeze(book)
+
+book.category = "HTML"
 book.author.name = "João"
 
 console.log(book)

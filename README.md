@@ -18,4 +18,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Método `reduce()`;
 - Conceitos de imutabilidade;
 - Shallow e Deep Copy;
-- SHallow Freezing;
+- SHallow e Deep Freezing;
