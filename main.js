@@ -1,15 +1,33 @@
-// setInterval() executa uma função após um intervalo de tempo especificado.
+// Função que retorna uma Promise.
+function asyncFunction() {
+  return new Promise((resolve, reject) => {
+    // Simula uma operação assíncrona.
+    setTimeout(() => {
+      const isSuccess = true
 
-let value = 10
+      if (isSuccess) {
+        resolve("A operação foi concluída com sucesso!")
+      } else {
+        reject("Algo deu errado!")
+      }
+    }, 3000) // Simula operação que leva 3 segundos.
+  })
+}
 
-const interval = setInterval(() => {
-  console.log(value)
-  value--
+// Visualizando que o retorno é uma promise.
+// console.log(asyncFunction())
 
-  if (value === 0) {
-    console.log("Feliz ano novo!")
+console.log("Executando função assíncrona...")
 
-    // Interrompe o intervalo de execuções.
-    clearInterval(interval)
-  }
-}, 1000)
+asyncFunction()
+  .then((response) => {
+    console.log("Sucesso:", response)
+  })
+  .catch((error) => {
+    console.log("Erro:", error)
+  })
+  .finally(() => {
+    console.log("Fim da execução!")
+  })
+
+console.log("Segue o fluxo...")

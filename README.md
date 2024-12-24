@@ -21,3 +21,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Shallow e Deep Freezing;
 - ES Modules;
 - `setTimeout()` e `setInterval()`;
+- Trabalhando com Promises `resolve`, `reject`, `then`, `catch` e `finally`;
