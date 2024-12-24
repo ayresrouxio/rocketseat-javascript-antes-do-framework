@@ -20,3 +20,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Shallow e Deep Copy;
 - Shallow e Deep Freezing;
 - ES Modules;
+- `setTimeout()` e `setInterval()`;
