@@ -1,6 +1,5 @@
-import { Calc } from "./calc.js"
+// setTimeout() executa uma função após um intervalo de tempo especificado.
 
-const calc = new Calc()
-
-console.log("4 + 6 =", calc.sum(4, 6))
-console.log("4 * 6 =", calc.multiply(4, 6))
+setTimeout(() => {
+  console.log("Olá, tudo  bem?")
+}, 1000) // tempo em milissegundos
