@@ -1,30 +1,20 @@
-// Função que retorna uma Promise.
-function asyncFunction() {
-  return new Promise((resolve, reject) => {
-    // Simula uma operação assíncrona.
-    setTimeout(() => {
-      const isSuccess = true
+// (1) Executa o código de forma síncrona e o valor 1 é impresso imediatamente no console.
+console.log(1)
 
-      if (isSuccess) {
-        resolve("A operação foi concluída com sucesso!")
-      } else {
-        reject("Algo deu errado!")
-      }
-    }, 3000) // Simula operação que leva 3 segundos.
-  })
-}
+// Microtasks são executadas antes de temporizadores e promessas.
+queueMicrotask(() => {
+  console.log(2)
+})
 
-const fetch = async () => {
-  try {
-    const response = await asyncFunction()
-    console.log(response)
-  } catch (error) {
-    console.log(error)
-  } finally {
-    console.log("Fim da execução")
-  }
-}
+// (5) Macrotask que aguarda o evento de temporizador ser acionado.
+setTimeout(() => {
+  console.log(3)
+}, 1000)
 
-fetch()
+// (2) Execução síncrona.
+console.log(4)
 
-console.log("Segue o fluxo...")
+// (4) Adiciona uma microtask.
+Promise.resolve(true).then(() => {
+  console.log(5)
+})
