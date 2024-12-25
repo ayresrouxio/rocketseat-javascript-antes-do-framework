@@ -22,5 +22,24 @@ async function fetchProductById(id) {
 }
 
 // fetchProducts()
+// fetchProductById(3)
 
-fetchProductById(3)
+const productName = document.querySelector("#name")
+const productPrice = document.querySelector("#price")
+const form = document.querySelector("form")
+
+addEventListener("submit", async (event) => {
+  event.preventDefault()
+
+  await fetch("http://localhost:3333/products", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id: new Date().getTime(),
+      name: productName.value,
+      price: Number(productPrice.value),
+    }),
+  })
+})
