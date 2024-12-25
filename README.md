@@ -24,3 +24,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Trabalhando com Promises `resolve`, `reject`, `then`, `catch` e `finally`;
 - `async` e `await`;
 - Trabalhando com Pacotes;
+- Trabalhando com API's;
