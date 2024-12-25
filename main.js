@@ -14,20 +14,17 @@ function asyncFunction() {
   })
 }
 
-// Visualizando que o retorno é uma promise.
-// console.log(asyncFunction())
+const fetch = async () => {
+  try {
+    const response = await asyncFunction()
+    console.log(response)
+  } catch (error) {
+    console.log(error)
+  } finally {
+    console.log("Fim da execução")
+  }
+}
 
-console.log("Executando função assíncrona...")
-
-asyncFunction()
-  .then((response) => {
-    console.log("Sucesso:", response)
-  })
-  .catch((error) => {
-    console.log("Erro:", error)
-  })
-  .finally(() => {
-    console.log("Fim da execução!")
-  })
+fetch()
 
 console.log("Segue o fluxo...")

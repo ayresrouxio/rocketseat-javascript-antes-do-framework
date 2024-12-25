@@ -22,3 +22,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - ES Modules;
 - `setTimeout()` e `setInterval()`;
 - Trabalhando com Promises `resolve`, `reject`, `then`, `catch` e `finally`;
+- `async` e `await`;
