@@ -25,3 +25,5 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - `async` e `await`;
 - Trabalhando com Pacotes;
 - Trabalhando com API's;
+- Compiladores;
+- Bundlers;
