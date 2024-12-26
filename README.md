@@ -26,4 +26,4 @@ Esse módulo aborda funcionalidades do Javascript moderno, como **imutabilidade*
 - Trabalhando com Pacotes;
 - Trabalhando com API's;
 - Compiladores `Babel`;
-- Bundlers;
+- Bundlers `Webpack`;
